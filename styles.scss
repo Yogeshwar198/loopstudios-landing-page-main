@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
+//  ----------------- SCSS Variables -----------------------
+$primary-font: "Alata", serif;
+$secondary-font: "Josefin Sans", serif;
+
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 55%);
+$very-dark-gray: hsl(0, 0%, 41%);
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+body,
+html {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: $secondary-font;
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-family: $secondary-font;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a:hover,
+button:hover {
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.hero__img {
+
+    background-image: url("./images/desktop/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 2rem 4rem;
+    position: relative;
+    height: 95vh;
+    height: 95dvh;
+}
+
+// Navbar Header
+nav {
+    padding: 4rem 8rem;
+    filter: brightness(90%);
+
+    .nav__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 120rem;
+        margin: 0 auto;
+
+        .nav__logo {
+            img {
+                max-width: 12rem;
+            }
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__list {
+            display: flex;
+            gap: 3.5rem;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: $white;
+            font-size: 1.4rem;
+            letter-spacing: 0.02rem;
+            // text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav__link:hover {
+            color: $black;
+        }
+    }
+}
+
+.nav__hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.nav__hamburger {
+    width: 3rem;
+    height: 3rem;
+}
+
+.hero__section {
+    padding: 6rem 8rem;
+    filter: brightness(90%);
+
+    .hero__container {
+        border: 0.1rem solid $white;
+        max-width: 55%;
+        height: auto;
+        color: $white;
+        padding: 4rem 2rem;
+        position: relative;
+
+        p {
+            font-size: 5vw;
+            font-weight: 200;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// Interaction Section 
+
+.interactive__section {
+    padding: 8rem 12rem;
+    background-color: $white;
+
+    .interactive__container {
+        position: relative;
+        display: flex;
+
+        .interactive__img {
+            position: relative;
+            z-index: 1;
+
+            img {
+                max-width: 90%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        .interactive__text {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            z-index: 2;
+            background-color: $white;
+            text-align: center;
+            max-width: 60%;
+            padding: 8vw 0vw 8vw 6vw;
+            text-align: left;
+
+            h1 {
+                font-size: 4vw;
+                margin-bottom: 2rem;
+                text-transform: uppercase;
+                font-weight: 300;
+                color: $black;
+                line-height: 1;
+            }
+
+            p {
+                font-size: 1.2vw;
+                color: $dark-gray;
+                line-height: 1.5;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
+// Creations Section
+
+.creations__section {
+    padding: 8rem 12rem;
+  
+    .creations__container {
+      display: flex;
+      flex-direction: column; 
+  
+      .creations__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+  
+        h1 {
+          font-size: 4rem;
+          font-weight: 200;
+          text-transform: uppercase;
+        }
+  
+        button {
+          padding: 0.8rem 2.8rem;
+          background-color: $white;
+          font-size: 1.4rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5rem;
+          font-weight: 600;
+          border: 0.2rem solid $dark-gray;
+          font-family: $primary-font;
+        }
+      }
+  
+      .creations_images {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 2rem;
+  
+        div {
+          position: relative; 
+          text-align: center;
+  
+          h2 {
+            width: 75%;
+            position: absolute;
+            bottom: 1rem; 
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5vw;
+            text-align: left;
+            font-weight: 100;
+            text-transform: uppercase;
+            margin: 0;
+            color: $white; 
+            padding: 0.5rem 1rem;
+            line-height: 1;
+          }
+  
+          img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+      }
+    }
+  
+   
+    @media (max-width: 768px) {
+      .creations__header h1 {
+        font-size: 2.2rem;
+      }
+  
+      .creations__header button {
+        font-size: 1.1rem;
+      }
+  
+      .creations_images {
+        grid-template-columns: repeat(2, 1fr); 
+  
+        h2 {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  
+
+    @media (max-width: 480px) {
+      .creations__header h1 {
+        font-size: 1.8rem;
+      }
+  
+      .creations__header button {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.6rem;
+      }
+  
+      .creations_images {
+        grid-template-columns: 1fr; 
+  
+        h2 {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  
+
+
+
+@media (max-width: 768px) {
+
+    // Navbar and Hero 
+    .hero__img {
+
+        background-image: url("./images/mobile/image-hero.jpg");
+        padding: 2rem 4rem;
+    }
+
+    .nav__link {
+        display: none;
+    }
+
+    .nav__hamburger {
+
+        display: block;
+    }
+
+    nav {
+        padding: 4rem 2rem;
+    }
+
+    .hero__section {
+        padding: 2rem;
+        text-align: left;
+
+
+        .hero__container {
+            max-width: 100%;
+
+            p {
+                font-size: 9vw;
+            }
+        }
+
+    }
+
+    // Interactive Section
+
+    .interactive__section {
+        padding: 8rem 6rem;
+
+        .interactive__container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .interactive__text {
+            max-width: 80%;
+            padding: 3rem;
+
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+
+@media (max-width:480px) {
+    nav {
+        padding: 4rem 0rem;
+    }
+
+    .hero__section {
+        padding: 5rem 1rem;
+        text-align: left;
+
+        .hero__container {
+            max-width: 100%;
+            height: 100%;
+            border: 0.4rem solid $white;
+
+            p {
+                font-size: 9.5vw;
+            }
+        }
+
+    }
+
+    // Interactive Section
+
+    .interactive__section {
+        padding: 8rem 2rem;
+
+
+        .interactive__container {
+
+
+            .interactive__img {
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .interactive__text {
+                top: 100%;
+                left: 0;
+                max-width: 100%;
+                text-align: center;
+                padding-left: 0vw;
+                
+
+                h1 {
+                    font-size: 2.8rem;
+                    margin-bottom: 2rem;
+                }
+
+                p {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
