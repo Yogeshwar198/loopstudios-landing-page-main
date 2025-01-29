@@ -31,7 +31,7 @@ html {
     font-weight: 400;
     font-family: $secondary-font;
     scroll-behavior: smooth;
-    // line-height: 1.5;
+    line-height: 1.5;
 }
 
 h1,
@@ -231,84 +231,185 @@ nav {
 
 // Creations Section
 
+// .creations__section {
+//     padding: 8rem 12rem;
+
+//     .creations__container {
+//         display: flex;
+//         flex-direction: column;
+
+//         .creations__header {
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: center;
+//             margin-bottom: 5rem;
+
+//             h1 {
+//                 font-size: 4rem;
+//                 font-weight: 200;
+//                 text-transform: uppercase;
+//             }
+
+//             button {
+//                 padding: 0.8rem 2.8rem;
+//                 background-color: $white;
+//                 font-size: 1.4rem;
+//                 text-transform: uppercase;
+//                 letter-spacing: 0.5rem;
+//                 font-weight: 600;
+//                 border: 0.2rem solid $dark-gray;
+//                 font-family: $primary-font;
+
+//                 &:hover {
+//                     background-color: $black;
+//                     color: $white;
+//                     border: 0.2rem solid $black;
+//                 }
+//             }
+//         }
+
+//         .creations_images {
+//             display: grid;
+//             grid-template-columns: repeat(4, 1fr);
+//             gap: 2rem;
+//             cursor: pointer;
+
+//             div {
+//                 position: relative;
+//                 text-align: center;
+
+//                 h2 {
+//                     width: 75%;
+//                     position: absolute;
+//                     bottom: 1rem;
+//                     left: 50%;
+//                     transform: translateX(-50%);
+//                     font-size: 2.5vw;
+//                     text-align: left;
+//                     font-weight: 100;
+//                     text-transform: uppercase;
+//                     margin: 0;
+//                     color: $white;
+//                     padding: 0.5rem 1rem;
+//                     line-height: 1;
+//                 }
+
+//                 img {
+//                     max-width: 100%;
+//                     height: auto;
+//                 }
+
+//                 .creations_images--mobile {
+//                     display: none;
+//                 }
+
+//                 &:hover {
+//                     filter: opacity(25%);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+
+
+
+// Creations Section with grid area
+
 .creations__section {
-    padding: 8rem 12rem;
+    
+    padding: 4rem 10rem;
+
 
     .creations__container {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "header button"
+            "images images";
+        gap: 4rem;
+        padding: 2rem;
+    }
 
-        .creations__header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5rem;
+    h1 {
+        grid-area: header;
+        margin: 0;
+        font-size: 4rem;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
 
-            h1 {
-                font-size: 4rem;
+    button {
+        grid-area: button;
+        justify-self: end;
+        padding: 0.8rem 2.8rem;
+        background-color: $white;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+        font-weight: 600;
+        border: 0.2rem solid $dark-gray;
+        font-family: $primary-font;
+        height: 65%;
+
+        &:hover {
+            background-color: $black;
+            color: $white;
+            border: 0.2rem solid $black;
+        }
+    }
+
+    .creations_images {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        grid-area: images;
+
+        div {
+            position: relative;
+        
+            h2 {
+                width: 60%;
+                position: absolute;
+                font-size: 2.2vw;
                 font-weight: 200;
                 text-transform: uppercase;
+                color: $white;
+                bottom: 3rem;
+                left: 4rem;
+                transition: color 0.3s ease; 
             }
-
-            button {
-                padding: 0.8rem 2.8rem;
-                background-color: $white;
-                font-size: 1.4rem;
-                text-transform: uppercase;
-                letter-spacing: 0.5rem;
-                font-weight: 600;
-                border: 0.2rem solid $dark-gray;
-                font-family: $primary-font;
-
-                &:hover {
-                    background-color: $black;
-                    color: $white;
-                    border: 0.2rem solid $black;
-                }
-            }
-        }
-
-        .creations_images {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            cursor: pointer;
-
-            div {
-                position: relative;
-                text-align: center;
-
-                h2 {
-                    width: 75%;
-                    position: absolute;
-                    bottom: 1rem;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    font-size: 2.5vw;
-                    text-align: left;
-                    font-weight: 100;
-                    text-transform: uppercase;
-                    margin: 0;
-                    color: $white;
-                    padding: 0.5rem 1rem;
-                    line-height: 1;
-                }
-
-                img {
-                    max-width: 100%;
-                    height: auto;
-                }
-
-                .creations_images--mobile {
-                    display: none;
-                }
-
+        
+            img {
                 &:hover {
                     filter: opacity(25%);
                 }
             }
+        
+            &:hover { 
+                h2 {
+                    color: $black;
+                }
+            }
         }
+        
+
     }
+
+}
+
+.image-item {
+    text-align: center;
+}
+
+.creations_images--desktop {
+    width: 100%;
+    height: auto;
+}
+
+.creations_images--mobile {
+    display: none;
 }
 
 
@@ -417,6 +518,7 @@ footer {
 
 
 
+
 @media (max-width: 768px) {
 
     // Navbar and Hero 
@@ -488,28 +590,67 @@ footer {
 
     // Creations Section
 
+    // .creations__section {
+    //     padding: 8rem 6rem;
+
+    //     .creations__container {
+    //         .creations__header h1 {
+    //             font-size: 2.2rem;
+    //         }
+
+    //         .creations__header button {
+    //             font-size: 1.1rem;
+    //         }
+
+    //         .creations_images {
+    //             grid-template-columns: repeat(2, 1fr);
+
+    //             h2 {
+    //                 font-size: 1.6rem;
+    //             }
+    //         }
+    //     }
+    // }
+
+
+    // Creation section with grid area
+
     .creations__section {
-        padding: 8rem 6rem;
+        padding: 4rem 5rem;
+
 
         .creations__container {
-            .creations__header h1 {
-                font-size: 2.2rem;
-            }
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "header"
+                "images"
+                "button";
+        }
 
-            .creations__header button {
-                font-size: 1.1rem;
-            }
+        h1 {
+            font-size: 4rem;
+            margin: auto;
+        }
 
-            .creations_images {
-                grid-template-columns: repeat(2, 1fr);
+        button {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            margin: auto;
+            height: 100%;
+        }
 
-                h2 {
-                    font-size: 1.6rem;
-                }
-            }
+        .creations_images {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        div{
+
+        .creations_images h2 {
+            font-size: 4vw;
+            left: 2rem;
+            bottom: 2rem;
+        }
         }
     }
-
 
     // Footer Section
 
@@ -564,7 +705,7 @@ footer {
     // Hero Section
 
     .hero__section {
-    
+
         .hero__container {
             max-width: 100%;
             height: 100%;
@@ -615,50 +756,96 @@ footer {
 
     // Creations Section 
 
+    // .creations__section {
+    //     padding: 0rem 2rem 10rem 2rem;
+    //     position: relative;
+
+    //     .creations__container {
+
+    //         .creations__header h1 {
+    //             font-size: 3.8rem;
+    //             margin: auto;
+    //             font-weight: 300;
+    //         }
+
+    //         .creations__header button {
+    //             position: absolute;
+    //             bottom: 0;
+    //             left: 50%;
+    //             transform: translate(-50%, -50%);
+    //             font-size: 1.6rem;
+    //             border: 0.2rem solid $black;
+    //             padding: 1rem 2rem;
+    //         }
+
+    //         .creations_images {
+    //             grid-template-columns: 1fr;
+
+    //             div {
+    //                 .creations_images--mobile {
+    //                     display: block;
+    //                 }
+
+    //                 .creations_images--desktop {
+    //                     display: none;
+    //                 }
+
+    //                 h2 {
+    //                     max-width: 50%;
+    //                     font-size: 3rem;
+    //                     text-align: left;
+    //                     left: 28%;
+    //                 }
+    //             }
+
+
+    //         }
+    //     }
+    // }
+
+
+    // Creation section with grid area
+
     .creations__section {
-        padding: 0rem 2rem 10rem 2rem;
-        position: relative;
+        padding: 0rem 2rem 4rem 2rem;
+
 
         .creations__container {
+            padding: 0;
+        }
 
-            .creations__header h1 {
-                font-size: 3.8rem;
-                margin: auto;
-                font-weight: 300;
-            }
+        h1 {
+            font-size: 3.8rem;
+            font-weight: 300;
+        }
 
-            .creations__header button {
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 1.6rem;
-                border: 0.2rem solid $black;
-                padding: 1rem 2rem;
-            }
+        button {
 
-            .creations_images {
-                grid-template-columns: 1fr;
+            font-size: 1.6rem;
+            border: 0.2rem solid $black;
+            
+        }
 
-                div {
-                    .creations_images--mobile {
-                        display: block;
-                    }
+        .creations_images {
+            grid-template-columns: 1fr;
 
-                    .creations_images--desktop {
-                        display: none;
-                    }
+            div {
 
-                    h2 {
-                        max-width: 50%;
-                        font-size: 3rem;
-                        text-align: left;
-                        left: 28%;
-                    }
+                h2 {
+                    font-size: 2.5rem;
+                    left: 1rem;
+                    bottom: 1.5rem;
                 }
-
-
             }
+        }
+
+        .creations_images--desktop {
+            display: none;
+        }
+
+        .creations_images--mobile {
+            display: block;
+            max-width: 100%;
         }
     }
 
@@ -692,7 +879,7 @@ footer {
             }
 
             .footer__copyright {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
         }
     }

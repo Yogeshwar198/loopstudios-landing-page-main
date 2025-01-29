@@ -15,6 +15,7 @@ html {
   font-weight: 400;
   font-family: "Josefin Sans", serif;
   scroll-behavior: smooth;
+  line-height: 1.5;
 }
 
 h1,
@@ -187,24 +188,25 @@ nav .nav__container .nav__item .nav__link:hover::after {
 }
 
 .creations__section {
-  padding: 8rem 12rem;
+  padding: 4rem 10rem;
 }
 .creations__section .creations__container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "header button" "images images";
+  gap: 4rem;
+  padding: 2rem;
 }
-.creations__section .creations__container .creations__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5rem;
-}
-.creations__section .creations__container .creations__header h1 {
+.creations__section h1 {
+  grid-area: header;
+  margin: 0;
   font-size: 4rem;
   font-weight: 200;
   text-transform: uppercase;
 }
-.creations__section .creations__container .creations__header button {
+.creations__section button {
+  grid-area: button;
+  justify-self: end;
   padding: 0.8rem 2.8rem;
   background-color: hsl(0, 0%, 100%);
   font-size: 1.4rem;
@@ -213,46 +215,51 @@ nav .nav__container .nav__item .nav__link:hover::after {
   font-weight: 600;
   border: 0.2rem solid hsl(0, 0%, 55%);
   font-family: "Alata", serif;
+  height: 65%;
 }
-.creations__section .creations__container .creations__header button:hover {
+.creations__section button:hover {
   background-color: hsl(0, 0%, 0%);
   color: hsl(0, 0%, 100%);
   border: 0.2rem solid hsl(0, 0%, 0%);
 }
-.creations__section .creations__container .creations_images {
+.creations__section .creations_images {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  cursor: pointer;
+  grid-area: images;
 }
-.creations__section .creations__container .creations_images div {
+.creations__section .creations_images div {
   position: relative;
+}
+.creations__section .creations_images div h2 {
+  width: 60%;
+  position: absolute;
+  font-size: 2.2vw;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  bottom: 3rem;
+  left: 4rem;
+  transition: color 0.3s ease;
+}
+.creations__section .creations_images div img:hover {
+  filter: opacity(25%);
+}
+.creations__section .creations_images div:hover h2 {
+  color: hsl(0, 0%, 0%);
+}
+
+.image-item {
   text-align: center;
 }
-.creations__section .creations__container .creations_images div h2 {
-  width: 75%;
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.5vw;
-  text-align: left;
-  font-weight: 100;
-  text-transform: uppercase;
-  margin: 0;
-  color: hsl(0, 0%, 100%);
-  padding: 0.5rem 1rem;
-  line-height: 1;
-}
-.creations__section .creations__container .creations_images div img {
-  max-width: 100%;
+
+.creations_images--desktop {
+  width: 100%;
   height: auto;
 }
-.creations__section .creations__container .creations_images div .creations_images--mobile {
+
+.creations_images--mobile {
   display: none;
-}
-.creations__section .creations__container .creations_images div:hover {
-  filter: opacity(25%);
 }
 
 footer {
@@ -385,19 +392,29 @@ footer .footer__copyright {
     font-size: 1.4rem;
   }
   .creations__section {
-    padding: 8rem 6rem;
+    padding: 4rem 5rem;
   }
-  .creations__section .creations__container .creations__header h1 {
-    font-size: 2.2rem;
+  .creations__section .creations__container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "images" "button";
   }
-  .creations__section .creations__container .creations__header button {
-    font-size: 1.1rem;
+  .creations__section h1 {
+    font-size: 4rem;
+    margin: auto;
   }
-  .creations__section .creations__container .creations_images {
+  .creations__section button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin: auto;
+    height: 100%;
+  }
+  .creations__section .creations_images {
     grid-template-columns: repeat(2, 1fr);
   }
-  .creations__section .creations__container .creations_images h2 {
-    font-size: 1.6rem;
+  .creations__section div .creations_images h2 {
+    font-size: 4vw;
+    left: 2rem;
+    bottom: 2rem;
   }
   footer {
     padding: 4rem 0rem;
@@ -458,37 +475,33 @@ footer .footer__copyright {
     font-size: 2rem;
   }
   .creations__section {
-    padding: 0rem 2rem 10rem 2rem;
-    position: relative;
+    padding: 0rem 2rem 4rem 2rem;
   }
-  .creations__section .creations__container .creations__header h1 {
+  .creations__section .creations__container {
+    padding: 0;
+  }
+  .creations__section h1 {
     font-size: 3.8rem;
-    margin: auto;
     font-weight: 300;
   }
-  .creations__section .creations__container .creations__header button {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .creations__section button {
     font-size: 1.6rem;
     border: 0.2rem solid hsl(0, 0%, 0%);
-    padding: 1rem 2rem;
   }
-  .creations__section .creations__container .creations_images {
+  .creations__section .creations_images {
     grid-template-columns: 1fr;
   }
-  .creations__section .creations__container .creations_images div .creations_images--mobile {
-    display: block;
+  .creations__section .creations_images div h2 {
+    font-size: 2.5rem;
+    left: 1rem;
+    bottom: 1.5rem;
   }
-  .creations__section .creations__container .creations_images div .creations_images--desktop {
+  .creations__section .creations_images--desktop {
     display: none;
   }
-  .creations__section .creations__container .creations_images div h2 {
-    max-width: 50%;
-    font-size: 3rem;
-    text-align: left;
-    left: 28%;
+  .creations__section .creations_images--mobile {
+    display: block;
+    max-width: 100%;
   }
   footer {
     padding: 4rem;
@@ -510,6 +523,6 @@ footer .footer__copyright {
     margin-top: 2rem;
   }
   footer .footer__container .footer__copyright {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 }/*# sourceMappingURL=styles.css.map */
