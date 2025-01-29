@@ -3,6 +3,7 @@
 
 
 //  ----------------- SCSS Variables -----------------------
+
 $primary-font: "Alata", serif;
 $secondary-font: "Josefin Sans", serif;
 
@@ -30,7 +31,7 @@ html {
     font-weight: 400;
     font-family: $secondary-font;
     scroll-behavior: smooth;
-    line-height: 1.5;
+    // line-height: 1.5;
 }
 
 h1,
@@ -72,11 +73,23 @@ button:hover {
     height: 95dvh;
 }
 
+.hero__img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    filter: brightness(60%);
+}
+
+
 // Navbar Header
 
 nav {
     padding: 4rem 8rem;
-    filter: brightness(90%);
+    position: relative;
 
     .nav__container {
         display: flex;
@@ -87,13 +100,14 @@ nav {
 
         .nav__logo {
             img {
-                max-width: 12rem;
+                max-width: 16rem;
             }
         }
 
         .nav__links {
             display: flex;
             align-items: center;
+            filter: brightness(90%);
         }
 
         .nav__list {
@@ -141,9 +155,10 @@ nav {
     height: 3rem;
 }
 
+// Hero Section
+
 .hero__section {
     padding: 6rem 8rem;
-    filter: brightness(90%);
 
     .hero__container {
         border: 0.1rem solid $white;
@@ -185,20 +200,20 @@ nav {
 
         .interactive__text {
             position: absolute;
-            top: 35%;
+            top: 34%;
             left: 50%;
             z-index: 2;
             background-color: $white;
             text-align: center;
             max-width: 60%;
-            padding: 8vw 0vw 8vw 6vw;
+            padding: 7vw 0vw 7vw 6vw;
             text-align: left;
 
             h1 {
                 font-size: 4vw;
                 margin-bottom: 2rem;
                 text-transform: uppercase;
-                font-weight: 300;
+                font-weight: 200;
                 color: $black;
                 line-height: 1;
             }
@@ -411,6 +426,10 @@ footer {
         padding: 2rem 4rem;
     }
 
+    .hero__img::before {
+        filter: brightness(100%);
+    }
+
     .nav__link {
         display: none;
     }
@@ -427,7 +446,10 @@ footer {
     .hero__section {
         padding: 2rem;
         text-align: left;
-
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         .hero__container {
             max-width: 100%;
@@ -529,14 +551,20 @@ footer {
 
     nav {
         padding: 4rem 0rem;
+
+        .nav__container {
+            .nav__logo {
+                img {
+                    max-width: 12rem;
+                }
+            }
+        }
     }
 
     // Hero Section
 
     .hero__section {
-        padding: 5rem 1rem;
-        text-align: left;
-
+    
         .hero__container {
             max-width: 100%;
             height: 100%;
@@ -585,6 +613,7 @@ footer {
     }
 
     // Creations Section 
+
     .creations__section {
         padding: 0rem 2rem 10rem 2rem;
         position: relative;
@@ -620,17 +649,20 @@ footer {
                     }
 
                     h2 {
-                        font-size: 3.5rem;
+                        max-width: 50%;
+                        font-size: 3rem;
                         text-align: left;
+                        left: 28%;
                     }
                 }
 
-                
+
             }
         }
     }
 
     // Footer Section
+
     footer {
         padding: 4rem;
 
