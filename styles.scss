@@ -34,6 +34,15 @@ html {
     line-height: 1.5;
 }
 
+
+.body__container {
+    width: 100%;
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
 h1,
 h2,
 h3,
@@ -318,7 +327,7 @@ nav {
 // Creations Section with grid area
 
 .creations__section {
-    
+
     padding: 4rem 10rem;
 
 
@@ -368,7 +377,7 @@ nav {
 
         div {
             position: relative;
-        
+
             h2 {
                 width: 60%;
                 position: absolute;
@@ -378,22 +387,22 @@ nav {
                 color: $white;
                 bottom: 3rem;
                 left: 4rem;
-                transition: color 0.3s ease; 
+                transition: color 0.3s ease;
             }
-        
+
             img {
                 &:hover {
                     filter: opacity(25%);
                 }
             }
-        
-            &:hover { 
+
+            &:hover {
                 h2 {
                     color: $black;
                 }
             }
         }
-        
+
 
     }
 
@@ -517,7 +526,123 @@ footer {
 }
 
 
+@media (min-width:1400px) {
 
+    // Hero and navbar background 
+    .hero__img {
+        background-size: cover;
+    }
+
+    .hero__img::before {
+        background-image: none;
+    }
+
+    // Navbar 
+    nav {
+        .nav__container {
+            .nav__logo {
+                img {
+                    min-width: 20rem;
+                }
+            }
+
+            .nav__link {
+                font-size: 2.8rem;
+            }
+        }
+    }
+
+    // Hero Section
+    .hero__section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .hero__container {
+            max-width: 40vw;
+
+            p {
+                font-size: 3.2vw;
+            }
+        }
+    }
+
+    // Interactive Section
+    .interactive__section {
+
+        .interactive__container {
+
+            flex-direction: column;
+
+            .interactive__img {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .interactive__text {
+                position: static;
+                max-width: 100%;
+                padding: 8rem 1rem 1rem 1rem;
+                text-align: center;
+
+
+                h1 {
+                    font-size: 2vw;
+                }
+
+                p {
+                    font-size: 1vw;
+                }
+            }
+        }
+    }
+
+    // Creations Section 
+    .creations__section {
+
+        h1 {
+            font-size: 5rem;
+        }
+
+        button {
+            font-size: 2.5rem;
+            height: 80%;
+        }
+
+        .creations_images {
+
+            div {
+
+                h2 {
+                    font-size: 0.85vw;
+                }
+
+            }
+
+        }
+
+    }
+
+
+    // Footer Section
+
+    footer { 
+        .footer__links {
+        
+            li {
+                font-size: 2rem;
+            
+            }
+        }
+
+        .footer__copyright {
+            font-size: 2.5rem;
+        }
+
+    }
+    
+}
 
 @media (max-width: 768px) {
 
@@ -642,13 +767,14 @@ footer {
         .creations_images {
             grid-template-columns: repeat(2, 1fr);
         }
-        div{
 
-        .creations_images h2 {
-            font-size: 4vw;
-            left: 2rem;
-            bottom: 2rem;
-        }
+        div {
+
+            .creations_images h2 {
+                font-size: 4vw;
+                left: 2rem;
+                bottom: 2rem;
+            }
         }
     }
 
@@ -823,7 +949,7 @@ footer {
 
             font-size: 1.6rem;
             border: 0.2rem solid $black;
-            
+
         }
 
         .creations_images {

@@ -18,6 +18,13 @@ html {
   line-height: 1.5;
 }
 
+.body__container {
+  width: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -342,6 +349,67 @@ footer .footer__copyright {
   text-align: right;
 }
 
+@media (min-width: 1400px) {
+  .hero__img {
+    background-size: cover;
+  }
+  .hero__img::before {
+    background-image: none;
+  }
+  nav .nav__container .nav__logo img {
+    min-width: 20rem;
+  }
+  nav .nav__container .nav__link {
+    font-size: 2.8rem;
+  }
+  .hero__section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero__section .hero__container {
+    max-width: 40vw;
+  }
+  .hero__section .hero__container p {
+    font-size: 3.2vw;
+  }
+  .interactive__section .interactive__container {
+    flex-direction: column;
+  }
+  .interactive__section .interactive__container .interactive__img {
+    max-width: 100%;
+    text-align: center;
+  }
+  .interactive__section .interactive__container .interactive__text {
+    position: static;
+    max-width: 100%;
+    padding: 8rem 1rem 1rem 1rem;
+    text-align: center;
+  }
+  .interactive__section .interactive__container .interactive__text h1 {
+    font-size: 2vw;
+  }
+  .interactive__section .interactive__container .interactive__text p {
+    font-size: 1vw;
+  }
+  .creations__section h1 {
+    font-size: 5rem;
+  }
+  .creations__section button {
+    font-size: 2.5rem;
+    height: 80%;
+  }
+  .creations__section .creations_images div h2 {
+    font-size: 0.85vw;
+  }
+  footer .footer__links li {
+    font-size: 2rem;
+  }
+  footer .footer__copyright {
+    font-size: 2.5rem;
+  }
+}
 @media (max-width: 768px) {
   .hero__img {
     background-image: url("./images/mobile/image-hero.jpg");
